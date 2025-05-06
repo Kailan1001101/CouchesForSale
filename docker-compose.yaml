@@ -1,0 +1,24 @@
+services:
+  db:
+    container_name: CouchesDB
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: kailan
+      POSTGRES_PASSWORD: password
+      PGDATA: /data/postgres
+    volumes:
+      - couchesforsale_volume:/var/lib/docker/volumes/couchesforsale_volume/_data
+    ports:
+      - "5332:5432"
+    networks:
+      - db
+    restart: unless-stopped
+
+
+networks:
+  db:
+    driver: bridge
+
+volumes:
+  couchesforsale_volume:
+
