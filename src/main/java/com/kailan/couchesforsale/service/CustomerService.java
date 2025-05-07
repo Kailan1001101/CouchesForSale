@@ -9,13 +9,17 @@ import java.util.List;
 @Service
 public class CustomerService {
 
-    private CustomerRepository customerRepo;
+    private final CustomerRepository customerRepository;
 
-    public CustomerService(CustomerRepository customerRepo) {
-        this.customerRepo = customerRepo;
+    public CustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
     }
 
-    public List<Customer> getAllCustomers(){
-        return customerRepo.findAll();
+    /**
+     * Retrieves all customers from the repository.
+     * @return a list of all customers.
+     */
+    public List<Customer> getAllCustomers() {
+        return customerRepository.findAll();
     }
 }

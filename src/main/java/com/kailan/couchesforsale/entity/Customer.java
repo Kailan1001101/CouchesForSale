@@ -10,6 +10,9 @@ public class Customer {
     private Long id;
     private String fullName;
 
+    public Customer(long l, String alice, String mail) {
+    }
+
     public String getFullName() {
         return fullName;
     }
